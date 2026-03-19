@@ -22,74 +22,13 @@
 - MySQL 8.0+
 - Redis 6.0+
 
-## 数据库配置
-
-### 1. 创建数据库
-
-```bash
-# 登录MySQL
-mysql -u root -p
-
-# 执行初始化脚本
-source ./ai_knowledge/back_ai_know/init.sql
-```
-
-### 2. 配置数据库连接
-
-编辑 `./ai_knowledge/back_ai_know/src/main/resources/application.yml`:
-
-```yaml
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/ai_knowledge_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
-    username: root
-    password: your_password  # 修改为你的MySQL密码
-```
-
-## Redis配置
-
-确保Redis服务正在运行：
-
-```bash
-# Windows
-redis-server.exe
-
-# Linux/Mac
-redis-server
-```
-
-配置Redis连接（如果需要）：
-
-```yaml
-spring:
-  data:
-    redis:
-      host: localhost
-      port: 6379
-      database: 0
-      password:  # 如果Redis设置了密码
-```
-
-## 智谱AI配置
-
-编辑 `e:/ai_knowledge/back_ai_know/src/main/resources/application.yml`:
-
-```yaml
-zhipu:
-  api:
-    key: your-zhipu-api-key  # 替换为你的智谱AI API密钥
-    url: https://open.bigmodel.cn/api/paas/v4/chat/completions
-    model: glm-4
-```
-
-获取智谱AI API密钥：https://open.bigmodel.cn/
 
 ## 后端启动
 
 ### 1. 安装依赖
 
 ```bash
-cd e:/ai_knowledge/back_ai_know
+cd ./ai_knowledge/back_ai_know
 mvn clean install
 ```
 
@@ -101,18 +40,13 @@ mvn spring-boot:run
 
 或者使用IDE（如IntelliJ IDEA）直接运行 `BackAiKnowApplication.java`
 
-### 3. 验证后端启动
-
-访问：http://localhost:8080/api/doc
-
-应该能看到Swagger API文档界面。
 
 ## 前端启动
 
 ### 1. 安装依赖
 
 ```bash
-cd e:/ai_knowledge/front/ai_knowledeg
+cd ./ai_knowledge/front/ai_knowledeg
 npm install
 ```
 
@@ -125,6 +59,23 @@ npm run dev
 ### 3. 访问前端
 
 打开浏览器访问：http://localhost:5175
+
+## 项目展示
+
+### 首页展示
+<img width="1873" height="866" alt="屏幕截图 2026-03-19 213623" src="https://github.com/user-attachments/assets/ad89d1e0-2a47-48f4-ad13-13e8af93ff01" />
+### 知识图谱广场
+<img width="1857" height="859" alt="屏幕截图 2026-03-19 213817" src="https://github.com/user-attachments/assets/67038d39-c238-4850-b2d8-fa56ab815078" />
+
+### 知识图谱详情
+<img width="1902" height="876" alt="屏幕截图 2026-03-19 214111" src="https://github.com/user-attachments/assets/169e436c-a2c5-4b07-84d4-09a4488aa8b1" />
+
+### AI对话生成
+<img width="1866" height="858" alt="屏幕截图 2026-03-19 213847" src="https://github.com/user-attachments/assets/48fc4e31-555d-4d78-838a-f7afd4720d84" />
+
+### 创建知识图谱
+<img width="1871" height="869" alt="屏幕截图 2026-03-19 213906" src="https://github.com/user-attachments/assets/0e17255d-26ce-4d18-8141-34e6993b6e09" />
+
 
 ## 功能说明
 
@@ -166,25 +117,7 @@ npm run dev
 3. **统计信息**: 查看系统统计数据
 4. **分类管理**: 管理知识图谱分类
 
-## 项目展示
 
-### 首页展示
-![image-20260319213628276](.\photo\屏幕截图 2026-03-19 213623.png)
-
-### 知识图谱广场
-### 知识图谱详情
-
-![image-20260319213822933](.\photo\屏幕截图 2026-03-19 213817.png)
-
-![image-20260319214116462](.\photo\屏幕截图 2026-03-19 214111.png)
-
-### AI对话生成
-
-![image-20260319213854191](.\photo\屏幕截图 2026-03-19 213847.png)
-
-### 创建知识图谱
-
-![image-20260319213912765](.\photo\屏幕截图 2026-03-19 213906.png)
 
 ## Excel导入格式
 
