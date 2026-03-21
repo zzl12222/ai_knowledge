@@ -1,6 +1,7 @@
 package com.ai.knowledge.controller;
 
 import com.ai.knowledge.common.Result;
+import com.ai.knowledge.dto.*;
 import com.ai.knowledge.entity.Comment;
 import com.ai.knowledge.entity.GraphEdge;
 import com.ai.knowledge.entity.GraphNode;
@@ -10,7 +11,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -269,52 +269,5 @@ public class KnowledgeGraphController {
     public Result<List<KnowledgeGraph>> getTopHotGraphs() {
         List<KnowledgeGraph> result = knowledgeGraphService.getTopHotGraphs(10);
         return Result.success(result);
-    }
-    
-    @Data
-    public static class GraphRequest {
-        private Long id;
-        private String name;
-        private String description;
-        private Long categoryId;
-        private Long ownerId;
-        private Integer isPublic;
-        private String coverImage;
-    }
-    
-    @Data
-    public static class LikeRequest {
-        private Long graphId;
-        private Long userId;
-    }
-    
-    @Data
-    public static class DownloadRequest {
-        private Long graphId;
-        private Long userId;
-    }
-    
-    @Data
-    public static class CommentRequest {
-        private Long graphId;
-        private Long userId;
-        private String content;
-    }
-    
-    @Data
-    public static class NodeRequest {
-        private Long id;
-        private Long graphId;
-        private String nodeId;
-        private String name;
-        private String category;
-    }
-    
-    @Data
-    public static class EdgeRequest {
-        private Long graphId;
-        private String sourceNodeId;
-        private String targetNodeId;
-        private String relation;
     }
 }

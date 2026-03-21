@@ -1,11 +1,11 @@
 package com.ai.knowledge.controller;
 
 import com.ai.knowledge.common.Result;
+import com.ai.knowledge.dto.*;
 import com.ai.knowledge.entity.User;
 import com.ai.knowledge.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -72,24 +72,5 @@ public class UserController {
             return Result.error("积分不足");
         }
         return Result.success(null);
-    }
-    
-    @Data
-    public static class LoginRequest {
-        private String username;
-        private String password;
-    }
-    
-    @Data
-    public static class RegisterRequest {
-        private String username;
-        private String password;
-        private String email;
-    }
-    
-    @Data
-    public static class PointsRequest {
-        private Long userId;
-        private Integer points;
     }
 }

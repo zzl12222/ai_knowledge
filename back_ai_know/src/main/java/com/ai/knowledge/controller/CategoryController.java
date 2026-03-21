@@ -1,11 +1,11 @@
 package com.ai.knowledge.controller;
 
 import com.ai.knowledge.common.Result;
+import com.ai.knowledge.dto.CategoryRequest;
 import com.ai.knowledge.entity.Category;
 import com.ai.knowledge.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -79,14 +79,5 @@ public class CategoryController {
             return Result.error("删除分类失败");
         }
         return Result.success(null);
-    }
-    
-    @Data
-    public static class CategoryRequest {
-        private Long id;
-        private String name;
-        private String description;
-        private String icon;
-        private Integer sortOrder;
     }
 }

@@ -95,3 +95,6 @@ zhipu:
       url: https://api.openai.com/v1/chat/completions
       model: gpt-3.5-turbo
       key: your-openai-api-key-here
+
+validation:
+  max-retries: 3
