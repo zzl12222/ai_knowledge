@@ -5,7 +5,7 @@
 这是一个完整的AI知识图谱平台，包含前端和后端两部分：
 
 - **前端**: Vue 3 + Element Plus + ECharts
-- **后端**: Spring Boot 3.2.0 + MyBatis-Plus + Redis + MySQL
+- **后端**: Spring Boot 3.2.0 + MyBatis-Plus + Redis + MySQL + langchain4j
 - **AI集成**: 智谱AI大模型API
 - **功能**: 用户管理、知识图谱管理、AI对话、Excel导入导出、积分系统、评论系统等
 
